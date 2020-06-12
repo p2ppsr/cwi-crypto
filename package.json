@@ -1,0 +1,27 @@
+{
+  "name": "@p2ppsr/crypto",
+  "version": "0.0.1",
+  "description": "Common implementations for standard cryptographic utilities",
+  "main": "build/index.js",
+  "repository": "git+https://github.com/p2ppsr/crypto",
+  "author": "Peer-to-Peer Privacy Systems Research LLC",
+  "license": "PROPRIETARY",
+  "scripts": {
+    "test": "react-scripts test",
+    "build": "rollup -c --environment BUILD:production",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "node-webcrypto-ossl": "^2.1.0",
+    "react-scripts": "^3.4.1",
+    "rollup": "^2.15.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "text-encoding": "^0.7.0"
+  },
+  "dependencies": {
+    "@p2ppsr/array-encoding": "0.0.1",
+    "@p2ppsr/cwi-validation": "0.0.1",
+    "@p2ppsr/standard-errors": "0.0.2"
+  }
+}
