@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@p2ppsr/array-encoding": "0.0.1",
-    "@p2ppsr/cwi-validation": "0.0.1",
+    "@p2ppsr/cwi-validation": "0.0.6",
     "@p2ppsr/standard-errors": "0.0.2"
   }
 }
