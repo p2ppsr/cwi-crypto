@@ -12,13 +12,67 @@ Names                    | Description
 
 ## API
 
-### `encrypt(Uint8Array|string, CryptoKey, string) => Uint8Array|string`
+### `encrypt(plaintext: Uint8Array|string, key: CryptoKey, returnType: string) => ciphertext: Uint8Array|string`
 
-### `decrypt(Uint8Array|string, CryptoKey, string) => Uint8Array|string`
+Encrypts the given plaintext with the given key. Returns the ciphertext.
 
-### `keyFromString(string, Uint8Array) => CryptoKey`
+#### Parameters
 
-### `XOR(Uint8Array, Uint8Array) => Uint8Array`
+Name       | Description
+-----------|-------------
+plaintext  | The data to encrypt. May be a String or a Uint8Array
+key        | The CryptoKey object to use for the encryption operation
+returnType | A string indicating the desired return type. May be either `string` (default) or `Uint8Array`
+
+#### Return Value
+
+The function will either return a string or a Uint8Array representing the ciphertext, depending on the value of `returnType`.
+
+### `decrypt(ciphertext: Uint8Array|string, key: CryptoKey, returnType: string) => plaintext: Uint8Array|string`
+
+Decrypts the given ciphertext with the given key. Returns the plaintext.
+
+#### Parameters
+
+Name       | Description
+-----------|-------------
+ciphertext | The data to decrypt. May be a String or a Uint8Array
+key        | The CryptoKey object to use for the decryption operation
+returnType | A string indicating the desired return type. May be either `string` (default) or `Uint8Array`
+
+#### Return Value
+
+The function will either return a string or a Uint8Array representing the plaintext, depending on the value of `returnType`.
+
+### `keyFromString({ string: String, salt: Uint8Array }) => key: CryptoKey`
+
+Derives a suitable CryptoKey from the password string with PBKDF2 and the given salt.
+
+#### Parameters
+
+Name       | Description
+-----------|-------------
+string     | The password string to use
+salt       | a Uint8Array representing the password salt to use
+
+#### Return Value
+
+The function will return a `CryptoKey` object representing the derived key.
+
+### `XOR(k1: Uint8Array, k2: Uint8Array) => result: Uint8Array`
+
+Performs a bitwise exclusive OR operation with the given data. Returns the result. Inputs must be the same length.
+
+#### Parameters
+
+Name    | Description
+--------|-------------
+k1      | A Uint8Array representing the first input to XOR
+k2      | A Uint8Array representing the second input to XOR
+
+#### Return Value
+
+The function will return a `Uint8Array` containing the output data.
 
 ## Testing
 
