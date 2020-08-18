@@ -11,6 +11,9 @@
     "build": "rollup -c --environment BUILD:production",
     "prepublishOnly": "npm run build"
   },
+  "publishConfig": {
+    "registry": "https://npm-registry.babbage.systems/"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "node-webcrypto-ossl": "^2.1.0",
