@@ -1,6 +1,6 @@
 import keyFromString from '../keyFromString'
-import { ValidationError } from '@p2ppsr/standard-errors'
-import { looksLikeCryptoKeyObject } from '@p2ppsr/cwi-validation'
+import { ValidationError } from '@cwi/errors'
+import { looksLikeCryptoKeyObject } from '@cwi/validation'
 // import vectors from './keyFromString.vectors'
 
 describe('keyFromString', () => {

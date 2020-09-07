@@ -1,5 +1,5 @@
 import XOR from '../XOR'
-import { ValidationError } from '@p2ppsr/standard-errors'
+import { ValidationError } from '@cwi/errors'
 import vectors from './XOR.vectors'
 
 describe('XOR', () => {

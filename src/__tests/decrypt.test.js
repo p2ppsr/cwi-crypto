@@ -1,6 +1,6 @@
 import decrypt from '../decrypt'
 import encrypt from '../encrypt'
-import { ValidationError } from '@p2ppsr/standard-errors'
+import { ValidationError } from '@cwi/errors'
 import vectors from './encryption.vectors'
 
 const KEYS = [

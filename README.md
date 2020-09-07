@@ -1,4 +1,4 @@
-# Crypto
+# @cwi/crypto
 
 This module provides a common implementation for standard cryptographic utilities, ciphers, IV management, low-level promitives and operations.
 
@@ -84,5 +84,5 @@ Adequate testing practices for use in a critical production application should b
 ## Confidentiality
 
 This is proprietary software developed and owned by Peer-to-peer Privacy Systems Research, LLC. 
-Except as provided for in your partnership agreement with us, you may not use this software and 
+Except as provided for in your CWI Partner Agreement with us, you may not use this software and 
 must keep it confidential.

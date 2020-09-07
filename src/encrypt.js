@@ -1,9 +1,9 @@
 import {
   encodeUint8AsString,
   decodeUint8FromString
-} from '@p2ppsr/array-encoding'
-import { InvalidStateError, ValidationError } from '@p2ppsr/standard-errors'
-import { looksLikeCryptoKeyObject } from '@p2ppsr/cwi-validation'
+} from '@cwi/array-encoding'
+import { InvalidStateError, ValidationError } from '@cwi/errors'
+import { looksLikeCryptoKeyObject } from '@cwi/validation'
 
 const encrypt = async (plaintext, key, returnType = 'string') => {
   if (typeof plaintext === 'undefined') {

@@ -1,4 +1,4 @@
-import { ValidationError } from '@p2ppsr/standard-errors'
+import { ValidationError } from '@cwi/errors'
 
 export default (k1, k2) => {
   if (

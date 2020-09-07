@@ -1,6 +1,6 @@
 {
-  "name": "@p2ppsr/crypto",
-  "version": "0.0.2",
+  "name": "@cwi/crypto",
+  "version": "0.1.0",
   "description": "Common implementations for standard cryptographic utilities",
   "main": "build/index.js",
   "repository": "git+https://github.com/p2ppsr/crypto",
@@ -23,8 +23,8 @@
     "text-encoding": "^0.7.0"
   },
   "dependencies": {
-    "@p2ppsr/array-encoding": "^0.0.1",
-    "@p2ppsr/cwi-validation": "^0.0.6",
-    "@p2ppsr/standard-errors": "^0.0.2"
+    "@cwi/array-encoding": "^0.1.0",
+    "@cwi/validation": "^0.1.0",
+    "@cwi/errors": "^0.1.0"
   }
 }

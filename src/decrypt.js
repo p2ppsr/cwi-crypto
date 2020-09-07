@@ -1,6 +1,6 @@
-import { decodeUint8FromString } from '@p2ppsr/array-encoding'
-import { InvalidStateError, ValidationError } from '@p2ppsr/standard-errors'
-import { looksLikeCryptoKeyObject } from '@p2ppsr/cwi-validation'
+import { decodeUint8FromString } from '@cwi/array-encoding'
+import { InvalidStateError, ValidationError } from '@cwi/errors'
+import { looksLikeCryptoKeyObject } from '@cwi/validation'
 
 /**
  * Decrypts the given ciphertext

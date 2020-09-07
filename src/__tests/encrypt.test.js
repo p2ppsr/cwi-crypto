@@ -1,7 +1,7 @@
 import encrypt from '../encrypt'
 import decrypt from '../decrypt'
-import { decodeUint8FromString } from '@p2ppsr/array-encoding'
-import { ValidationError } from '@p2ppsr/standard-errors'
+import { decodeUint8FromString } from '@cwi/array-encoding'
+import { ValidationError } from '@cwi/errors'
 
 const KEYS = [
   'WpDVnYKRl5g6VNiH/eotxMOAmPALoxEPJkVjO26hFFg=',
