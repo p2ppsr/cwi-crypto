@@ -1,30 +1,25 @@
 {
-  "name": "@cwi/crypto",
+  "name": "cwi-crypto",
   "version": "0.1.0",
   "description": "Common implementations for standard cryptographic utilities",
   "main": "build/index.js",
-  "repository": "git+https://github.com/p2ppsr/crypto",
+  "repository": "git+https://github.com/p2ppsr/cwi-crypto",
   "author": "Peer-to-Peer Privacy Systems Research LLC",
-  "license": "PROPRIETARY",
+  "license": "Open BSV License",
   "scripts": {
     "test": "react-scripts test",
     "build": "rollup -c --environment BUILD:production",
     "prepublishOnly": "npm run build"
   },
-  "publishConfig": {
-    "registry": "https://npm-registry.babbage.systems/"
-  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
-    "node-webcrypto-ossl": "^2.1.0",
+    "@peculiar/webcrypto": "^1.4.0",
     "react-scripts": "^3.4.1",
     "rollup": "^2.15.0",
     "rollup-plugin-babel": "^4.4.0",
     "text-encoding": "^0.7.0"
   },
   "dependencies": {
-    "@cwi/array-encoding": "^0.1.0",
-    "@cwi/validation": "^0.1.0",
-    "@cwi/errors": "^0.1.0"
+    "cwi-array-encoding": "^0.1.5"
   }
 }

@@ -1,7 +1,7 @@
 import decrypt from '../decrypt'
 import encrypt from '../encrypt'
-import { ValidationError } from '@cwi/errors'
 import vectors from './encryption.vectors'
+import { decodeUint8FromString } from 'cwi-array-encoding'
 
 const KEYS = [
   'WpDVnYKRl5g6VNiH/eotxMOAmPALoxEPJkVjO26hFFg=',
@@ -22,8 +22,8 @@ const PLAINTEXT_1 = 'hello there'
 const CIPHERTEXT_1 = 'jI0lNI39UkC+gzIVoSMXPGSRl3mriEWnAKRSAxFQTBaK3i1LcozFOiVPCrqFfKr2r5dFOsL/YUh9DVI='
 
 describe('decrypt', () => {
-  it('Throws a ValidationError if ciphertext is not provided', async () => {
-    expect(decrypt(undefined, await getKey(1))).rejects.toThrow(ValidationError)
+  it('Throws a Error if ciphertext is not provided', async () => {
+    expect(decrypt(undefined, await getKey(1))).rejects.toThrow(Error)
   })
   it('Throws a TypeError if ciphertext is not a string or Uint8Array', async () => {
     expect(decrypt(
@@ -35,19 +35,19 @@ describe('decrypt', () => {
       await getKey(1)
     )).rejects.toThrow(TypeError)
   })
-  it('Throws a ValidationError if the given key is not a CryptoKey', () => {
+  it('Throws a Error if the given key is not a CryptoKey', () => {
     expect(decrypt(
       CIPHERTEXT_1,
       { not: 'a', cryptokey: 'object' }
-    )).rejects.toThrow(new ValidationError(
-      'Invalid key: cryptoKey must have a kty property!'
+    )).rejects.toThrow(new Error(
+      'Decryption failed!'
     ))
   })
-  it('Throws a ValidationError if no key is provided', () => {
+  it('Throws a Error if no key is provided', () => {
     expect(decrypt(
       CIPHERTEXT_1,
       undefined
-    )).rejects.toThrow(new ValidationError(
+    )).rejects.toThrow(new Error(
       'key is a required parameter!'
     ))
   })

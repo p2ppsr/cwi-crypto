@@ -1,7 +1,6 @@
 import encrypt from '../encrypt'
 import decrypt from '../decrypt'
-import { decodeUint8FromString } from '@cwi/array-encoding'
-import { ValidationError } from '@cwi/errors'
+import { encodeUint8AsString, decodeUint8FromString } from 'cwi-array-encoding'
 
 const KEYS = [
   'WpDVnYKRl5g6VNiH/eotxMOAmPALoxEPJkVjO26hFFg=',
@@ -19,11 +18,11 @@ const getKey = async i => {
 }
 
 describe('encrypt', () => {
-  it('Throws a ValidationError if plaintext is not provided', async () => {
+  it('Throws a Error if plaintext is not provided', async () => {
     expect(encrypt(
       undefined,
       await getKey(1)
-    )).rejects.toThrow(new ValidationError(
+    )).rejects.toThrow(new Error(
       'plaintext is a required parameter!'
     ))
   })
@@ -37,19 +36,19 @@ describe('encrypt', () => {
       await getKey(1)
     )).rejects.toThrow(TypeError)
   })
-  it('Throws a ValidationError if key is not a CryptoKey object', async () => {
+  it('Throws a Error if key is not a CryptoKey object', async () => {
     expect(encrypt(
       'string',
       { non: 'crypto', key: 'object' }
-    )).rejects.toThrow(new ValidationError(
-      'Invalid key: cryptoKey must contain a kty parameter!'
+    )).rejects.toThrow(new Error(
+      "Key is not of type 'CryptoKey'"
     ))
   })
-  it('Throws a ValidationError if no key is given', async () => {
+  it('Throws a Error if no key is given', async () => {
     expect(encrypt(
       'string',
       undefined
-    )).rejects.toThrow(new ValidationError(
+    )).rejects.toThrow(new Error(
       'key is a required parameter!'
     ))
   })

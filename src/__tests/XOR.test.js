@@ -1,5 +1,4 @@
 import XOR from '../XOR'
-import { ValidationError } from '@cwi/errors'
 import vectors from './XOR.vectors'
 
 describe('XOR', () => {
@@ -17,11 +16,11 @@ describe('XOR', () => {
     expect(() => XOR(uint8_1, uint8_2)).not.toThrow(TypeError)
   })
   it(
-    'Should throw a ValidationError if both inputs are not the same length',
+    'Should throw a Error if both inputs are not the same length',
     () => {
       let a = new Uint8Array([1, 2, 3])
       let b = new Uint8Array([4, 5])
-      expect(() => XOR(a, b)).toThrow(ValidationError)
+      expect(() => XOR(a, b)).toThrow(Error)
     }
   )
   it('Should return a value of type Uint8Array', () => {

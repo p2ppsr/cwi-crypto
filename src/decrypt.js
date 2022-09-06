@@ -1,6 +1,4 @@
-import { decodeUint8FromString } from '@cwi/array-encoding'
-import { InvalidStateError, ValidationError } from '@cwi/errors'
-import { looksLikeCryptoKeyObject } from '@cwi/validation'
+import { decodeUint8FromString } from 'cwi-array-encoding'
 
 /**
  * Decrypts the given ciphertext
@@ -10,21 +8,13 @@ import { looksLikeCryptoKeyObject } from '@cwi/validation'
  */
 const decrypt = async (ciphertext, key, returnType = 'string') => {
   if (typeof ciphertext === 'undefined') {
-    throw new ValidationError('ciphertext is a required parameter!')
+    throw new Error('ciphertext is a required parameter!')
   }
   if (typeof ciphertext !== 'string' && ciphertext.constructor !== Uint8Array) {
     throw new TypeError(`ciphertext must be either a string or a Uint8Array, but ${typeof ciphertext} was given!`)
   }
   if (typeof key === 'undefined') {
-    throw new ValidationError('key is a required parameter!')
-  }
-
-  try {
-    await looksLikeCryptoKeyObject(key)
-  } catch (e) {
-    throw new ValidationError(
-      `Invalid key: ${e.message}`
-    )
+    throw new Error('key is a required parameter!')
   }
 
   let ciphertextWithIvBuffer
@@ -49,7 +39,7 @@ const decrypt = async (ciphertext, key, returnType = 'string') => {
     } else if (returnType === 'Uint8Array') {
       return new Uint8Array(plaintext)
     }  else {
-      throw new ValidationError(
+      throw new Error(
         `returnType must be either string or Uint8Array, but ${
           returnType
         } was given!`
