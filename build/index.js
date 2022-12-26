@@ -86,6 +86,20 @@
     }
   };
 
+  /**
+   * Generates a secure AES-GCM 256 bit key for crypographic operations
+   * @returns the generated key in the form of a buffer
+   */
+  const generate = async () => {
+    return await crypto.subtle.generateKey({
+      name: 'AES-GCM',
+      length: 256
+    }, true, ['encrypt', 'decrypt']).then(async key => {
+      const keyBuffer = await crypto.subtle.exportKey('raw', key);
+      return keyBuffer;
+    });
+  };
+
   var XOR = ((k1, k2) => {
     if (k1.constructor !== Uint8Array || k2.constructor !== Uint8Array) {
       throw new TypeError('k1 and k2 must be Uint8Arrays!');
@@ -127,6 +141,7 @@
   exports.XOR = XOR;
   exports.decrypt = decrypt;
   exports.encrypt = encrypt;
+  exports.generate = generate;
   exports.keyFromString = keyFromString;
 
   Object.defineProperty(exports, '__esModule', { value: true });
