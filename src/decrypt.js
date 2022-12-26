@@ -38,7 +38,7 @@ const decrypt = async (ciphertext, key, returnType = 'string') => {
       return new TextDecoder().decode(new Uint8Array(plaintext))
     } else if (returnType === 'Uint8Array') {
       return new Uint8Array(plaintext)
-    }  else {
+    } else {
       throw new Error(
         `returnType must be either string or Uint8Array, but ${
           returnType

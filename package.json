@@ -17,7 +17,8 @@
     "react-scripts": "^3.4.1",
     "rollup": "^2.15.0",
     "rollup-plugin-babel": "^4.4.0",
-    "text-encoding": "^0.7.0"
+    "text-encoding": "^0.7.0",
+    "standard": "^14.3.4"
   },
   "dependencies": {
     "cwi-array-encoding": "^0.1.5"
