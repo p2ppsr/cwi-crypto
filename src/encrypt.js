@@ -15,7 +15,7 @@ const encrypt = async (plaintext, key, returnType = 'string') => {
   }
 
   // Plaintext is converted to a Uint8Array if it is not given as one
-  const plaintextBuffer = typeof plaintext === 'string' 
+  const plaintextBuffer = typeof plaintext === 'string'
     ? new TextEncoder().encode(plaintext)
     : plaintext
   const ivBuffer = crypto.getRandomValues(new Uint8Array(32))
