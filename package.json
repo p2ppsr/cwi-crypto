@@ -14,7 +14,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@peculiar/webcrypto": "^1.4.0",
-    "node-polyfill-webpack-plugin": "^1.1.4",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "react-scripts": "^3.4.1",
     "standard": "^14.3.4",
     "text-encoding": "^0.7.0",
