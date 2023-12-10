@@ -1,6 +1,6 @@
 {
   "name": "cwi-crypto",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Common implementations for standard cryptographic utilities",
   "main": "dist/cwi-crypto.js",
   "repository": "git+https://github.com/p2ppsr/cwi-crypto",
